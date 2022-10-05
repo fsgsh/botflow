@@ -40,7 +40,7 @@ jobs:
          timeout-minutes: 340
          continue-on-error: true
          run: |
-           parallel -j3 -u ::: 'sudo bash cleanup.sh' 'git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/TG-RenameBot.git renbot && cd renbot && sudo docker build . -t renbot && sudo docker run renbot' 'git clone -b hevc https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/X-URL-Uploader.git xbot && cd xbot && sudo docker build . -t xbot && sudo docker run xbot'
+           parallel -j3 -u ::: 'sudo bash cleanup.sh' 'git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/TG-RenameBot.git renbot && cd renbot && sudo docker build . -t renbot && sudo docker run renbot' 'git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@github.com/${{ secrets.GIT_NAME }}/X-URL-Uploader.git upxbot && cd upxbot && sudo docker build . -t upxbot && sudo docker run upxbot'
 #############################################################################################
        - name: Send Record to Github
          continue-on-error: true
